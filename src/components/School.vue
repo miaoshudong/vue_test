@@ -8,7 +8,7 @@
 <script>
 	import pubsub from 'pubsub-js'
 	export default {
-		name:'School',
+		name:'MySchool',
 		data() {
 			return {
 				name:'尚硅谷',
