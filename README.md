@@ -1,5 +1,5 @@
 # 笔记
-
+readme
 ## 脚手架文件结构
 
 	├── node_modules 
