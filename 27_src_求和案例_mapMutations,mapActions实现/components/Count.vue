@@ -67,7 +67,7 @@ export default {
     //借助mapstate生成计算属性，从state中读取数据，（对象写法）
     // ...mapState({ sum: "sum", school: "school", subject: "subject" }),
     //借助mapstate生成计算属性，从state中读取数据，（数组写法）
-    ...mapState(["sum", "school", "subject"]),
+    ...mapState(["sum", "school", "subject", "personList"]),
     // ————————————————————————————————————————————————————————————————————————————————————————
     /*  bigSum() {
       return this.$store.getters.bigSum;
