@@ -13,7 +13,7 @@
 
 <script>
 import pubsub from "pubsub-js";
-import axios from "axios";
+// import axios from "axios";
 export default {
   name: "MySearch",
   data() {
@@ -35,35 +35,37 @@ export default {
         errMsg: "",
         users: [],
       });
-      axios.get(`https://api.github.com/search/users?q=${this.keyWord}`).then(
-        (response) => {
-          console.log("请求成功了");
+      this.$http
+        .get(`https://api.github.com/search/users?q=${this.keyWord}`)
+        .then(
+          (response) => {
+            console.log("请求成功了");
 
-          /* this.$bus.$emit("updataListData", {
+            /* this.$bus.$emit("updataListData", {
             isLoading: false,
             errMsg: "",
             users: response.data.items,
           }); */
-          pubsub.publish("updataListData", {
-            isLoading: false,
-            errMsg: "",
-            users: response.data.items,
-          });
-        },
-        (error) => {
-          console.log("请求失败了", error.message);
-          /* this.$bus.$emit("updataListData", {
+            pubsub.publish("updataListData", {
+              isLoading: false,
+              errMsg: "",
+              users: response.data.items,
+            });
+          },
+          (error) => {
+            console.log("请求失败了", error.message);
+            /* this.$bus.$emit("updataListData", {
             isLoading: false,
             errMsg: error.message,
             users: [],
           }); */
-          pubsub.publish("updataListData", {
-            isLoading: false,
-            errMsg: error.message,
-            users: [],
-          });
-        }
-      );
+            pubsub.publish("updataListData", {
+              isLoading: false,
+              errMsg: error.message,
+              users: [],
+            });
+          }
+        );
     },
   },
 };

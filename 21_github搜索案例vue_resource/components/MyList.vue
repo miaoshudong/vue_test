@@ -39,7 +39,7 @@ export default {
   },
   mounted() {
     pubsub.subscribe("updataListData", (message, dataObj) => {
-      console.log(message, dataObj);
+      // console.log(message, dataObj);
       this.info = { ...this.info, ...dataObj };
     });
     /* this.$bus.$on("updataListData", (dataObj) => {
