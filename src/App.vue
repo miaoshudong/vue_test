@@ -10,10 +10,18 @@
           <!-- <a class="list-group-item active" href="./about.html">About</a> -->
           <!-- <a class="list-group-item" href="./home.html">Home</a> -->
           <!--  -->
-          <router-link class="list-group-item" active-class="active" to="/about"
+          <router-link
+            replace
+            class="list-group-item"
+            active-class="active"
+            to="/about"
             >About</router-link
           >
-          <router-link class="list-group-item" active-class="active" to="/home"
+          <router-link
+            replace
+            class="list-group-item"
+            active-class="active"
+            to="/home"
             >Home</router-link
           >
         </div>
